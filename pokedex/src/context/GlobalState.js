@@ -6,14 +6,32 @@ import { BASE_URL } from "../constants/url";
 export const GlobalState = (props) => {
 
     const [pokeList, setPokeList] = useState([]);
+    const [pokedex, setPokedex] = useState([]);
 
     useEffect(() => {
         getPokeList(BASE_URL, setPokeList);
     }, []);
 
-    console.log(pokeList);
+    const addInPokedex = (clickedPoke) => {
+        const findPokeInPokedex = pokedex.find((poke) => poke.id === clickedPoke.id);
 
-    const context = {}
+        if (!findPokeInPokedex) {
+            const newPokedex = [...pokedex, clickedPoke];
+            setPokedex(newPokedex);
+        }
+    };
+
+    const removeFromPokedex = (clickedPoke) => {
+        const newPokedex = pokedex.filter((poke) => poke.id !== clickedPoke.id)
+        setPokedex(newPokedex);
+    }
+
+    const context = {
+        pokeList: pokeList,
+        pokedex: pokedex,
+        addInPokedex: addInPokedex,
+        removeFromPokedex: removeFromPokedex,
+    };
     
     return (
         <GlobalContext.Provider value={context}>
