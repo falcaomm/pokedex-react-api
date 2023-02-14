@@ -13,7 +13,7 @@ export const GlobalState = (props) => {
     }, []);
 
     const addInPokedex = (clickedPoke) => {
-        const findPokeInPokedex = pokedex.find((poke) => poke.id === clickedPoke.id);
+        const findPokeInPokedex = pokedex.find((poke) => poke.name === clickedPoke.name);
 
         if (!findPokeInPokedex) {
             const newPokedex = [...pokedex, clickedPoke];
@@ -22,7 +22,7 @@ export const GlobalState = (props) => {
     };
 
     const removeFromPokedex = (clickedPoke) => {
-        const newPokedex = pokedex.filter((poke) => poke.id !== clickedPoke.id)
+        const newPokedex = pokedex.filter((poke) => poke.name !== clickedPoke.name)
         setPokedex(newPokedex);
     }
 
