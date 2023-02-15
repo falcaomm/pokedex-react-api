@@ -7,6 +7,7 @@ export const GlobalState = (props) => {
 
     const [pokeList, setPokeList] = useState([]);
     const [pokedex, setPokedex] = useState([]);
+    const [pokeDetail, setPokeDetail] = useState([])
 
     useEffect(() => {
         getPokeList(BASE_URL, setPokeList);
@@ -26,11 +27,17 @@ export const GlobalState = (props) => {
         setPokedex(newPokedex);
     }
 
+    const openPokeDetails = (clickedPoke) => {
+        setPokeDetail(clickedPoke);
+    }
+
     const context = {
         pokeList: pokeList,
         pokedex: pokedex,
         addInPokedex: addInPokedex,
         removeFromPokedex: removeFromPokedex,
+        openPokeDetails: openPokeDetails,
+        pokeDetail: pokeDetail,
     };
     
     return (

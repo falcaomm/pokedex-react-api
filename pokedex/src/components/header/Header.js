@@ -1,12 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../routes/cordinator";
 
-export default function Header() {
-    const location = useLocation();
+export default function Header(props) {
 
+    const { pokeDetail, removeFromPokedex, addInPokedex, pokedex } = props
+
+    const location = useLocation();
     const navigate = useNavigate();
 
-    {switch (location.pathname) {
+    const filteredPokedex = pokedex?.filter((poke) => poke.name.includes(pokeDetail.name))
+
+    {
+        switch (location.pathname) {
             case "/":
                 return (
                     <>
@@ -24,7 +29,24 @@ export default function Header() {
                         </button>
                         <span>Pokedex</span>
                     </>
-            );
+                );
+            case `/detalhes/${pokeDetail.name}`:
+                return (
+                    <>
+                        <button onClick={() => goToHome(navigate)}>
+                            Ver lista de pokemons
+                        </button>
+                        <span>pokeDetail</span>
+                        {filteredPokedex?.length !== 0 ?
+                            <button onClick={() => removeFromPokedex(pokeDetail)}>
+                                Remover pokemon
+                            </button>
+                            : <button onClick={() => addInPokedex(pokeDetail)}>
+                                Adicionar pokemon
+                            </button>
+                        }
+                    </>
+                );
             default:
                 return (
                     <>

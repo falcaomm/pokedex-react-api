@@ -6,7 +6,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 
 export default function PokedexPage() {
     const context = useContext(GlobalContext)
-    const { pokedex, removeFromPokedex } = context;
+    const { pokedex, removeFromPokedex, openPokeDetails } = context;
 
     return (
         <>
@@ -18,6 +18,7 @@ export default function PokedexPage() {
                         key={poke.name}
                         pokemonUrl={`${BASE_URL}/${poke.name}`}
                         removeFromPokedex={removeFromPokedex}
+                        openPokeDetails={openPokeDetails}
                     />
                 ))}
             </section>
