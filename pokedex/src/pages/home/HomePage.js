@@ -8,7 +8,7 @@ import React from "react";
 export default function HomePage() {
 
     const context = useContext(GlobalContext)
-    const { pokeList, addInPokedex, pokedex } = context;
+    const { pokeList, addInPokedex, pokedex, openPokeDetails } = context;
 
 
     const filteredPokelist = () =>
@@ -21,15 +21,6 @@ export default function HomePage() {
             return (differentPokes)            
         })
     
-    // const filteredPokelist = () =>
-    //     pokeList?.filter(
-    //         (pokeInPokelist) =>
-    //             !pokedex.find(
-    //                 (pokeInPokedex) => pokeInPokelist.id === pokeInPokedex.id
-    //             )
-    //     );
-
-    
     return (
         <>
             <Header></Header>
@@ -40,6 +31,7 @@ export default function HomePage() {
                         key={poke.url}
                         pokeUrl={poke.url}
                         addInPokedex={addInPokedex}
+                        openPokeDetails={openPokeDetails}
                     />
                 ))}
             </section>
