@@ -16,7 +16,7 @@ export default function PokedexPage() {
                 {pokedex?.map((poke) => (
                     <Card
                         key={poke.name}
-                        pokemonUrl={`${BASE_URL}/${poke.name}`}
+                        pokeUrl={`${BASE_URL}/${poke.name}`}
                         removeFromPokedex={removeFromPokedex}
                         openPokeDetails={openPokeDetails}
                     />

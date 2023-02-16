@@ -5,6 +5,7 @@ export default function Header(props) {
 
     const { pokeDetail, removeFromPokedex, addInPokedex, pokedex } = props
 
+
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ export default function Header(props) {
                         <span>Pokedex</span>
                     </>
                 );
-            case `/detalhes/${pokeDetail.name}`:
+            case `/detalhes/${pokeDetail?.name}`:
                 return (
                     <>
                         <button onClick={() => goToHome(navigate)}>
