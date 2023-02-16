@@ -1,5 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../routes/cordinator";
+import { HeaderStyle, Logo, ButtonPokedex, ButtonHome } from "./styled";
+import { logoPokedex } from '../../assets/images'
+import { Icon } from '@iconify/react';
+
 
 export default function Header(props) {
 
@@ -15,47 +19,47 @@ export default function Header(props) {
         switch (location.pathname) {
             case "/":
                 return (
-                    <>
-                        <button onClick={() => goToPokedex(navigate)}>
-                            Ver pokedex
-                        </button>
-                        <span>Lista de pokemons</span>
-                    </>
+                    <HeaderStyle>
+                        <Logo src={logoPokedex}/>
+                        <ButtonPokedex onClick={() => goToPokedex(navigate)}>
+                            Pokedex
+                        </ButtonPokedex>
+                    </HeaderStyle>
                 );
             case "/pokedex":
                 return (
-                    <>
-                        <button onClick={() => goToHome(navigate)}>
-                            Ver lista de pokemons
-                        </button>
-                        <span>Pokedex</span>
-                    </>
+                    <HeaderStyle>
+                        <ButtonHome onClick={() => goToHome(navigate)}>
+                            <span><Icon icon="eva:arrow-ios-back-outline" /> Todos Pokemons</span>
+                        </ButtonHome>
+                        <Logo src={logoPokedex} />
+                    </HeaderStyle>
                 );
             case `/detalhes/${pokeDetail?.name}`:
                 return (
-                    <>
-                        <button onClick={() => goToHome(navigate)}>
-                            Ver lista de pokemons
-                        </button>
-                        <span>pokeDetail</span>
+                    <HeaderStyle>
+                        <ButtonHome onClick={() => goToHome(navigate)}>
+                            <span><Icon icon="eva:arrow-ios-back-outline" /> Todos Pokemons</span>
+                        </ButtonHome>
+                        <Logo src={logoPokedex} />
                         {filteredPokedex?.length !== 0 ?
-                            <button onClick={() => removeFromPokedex(pokeDetail)}>
+                            <ButtonPokedex onClick={() => removeFromPokedex(pokeDetail)}>
                                 Remover pokemon
-                            </button>
-                            : <button onClick={() => addInPokedex(pokeDetail)}>
+                            </ButtonPokedex>
+                            : <ButtonPokedex onClick={() => addInPokedex(pokeDetail)}>
                                 Adicionar pokemon
-                            </button>
+                            </ButtonPokedex>
                         }
-                    </>
+                    </HeaderStyle>
                 );
             default:
                 return (
-                    <>
+                    <HeaderStyle>
                         <button onClick={() => goToHome(navigate)}>
                             Voltar para página inicial
                         </button>
                         <span>Página inexistente</span>
-                    </>
+                    </HeaderStyle>
                 );
         }
     };
