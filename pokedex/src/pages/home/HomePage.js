@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import Card from "../../components/card/Card";
 import React from "react";
+import { MainStyle, TextMain, SectionMain } from "../../components/main/styled";
 
 
 export default function HomePage() {
@@ -24,17 +25,19 @@ export default function HomePage() {
     return (
         <>
             <Header></Header>
-            <p>HomePage</p>
-            <section>
-                {filteredPokelist().map((poke) => (
-                    <Card
-                        key={poke.url}
-                        pokeUrl={poke.url}
-                        addInPokedex={addInPokedex}
-                        openPokeDetails={openPokeDetails}
-                    />
-                ))}
-            </section>
+            <MainStyle>
+                <TextMain>Todos Pokemons</TextMain>
+                <SectionMain>
+                    {filteredPokelist().map((poke) => (
+                        <Card
+                            key={poke.url}
+                            pokeUrl={poke.url}
+                            addInPokedex={addInPokedex}
+                            openPokeDetails={openPokeDetails}
+                        />
+                    ))}
+                </SectionMain>
+            </MainStyle>
         </>
     );
 }

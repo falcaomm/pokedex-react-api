@@ -3,6 +3,8 @@ import Card from "../../components/card/Card";
 import { BASE_URL } from "../../constants/url";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
+import { MainStyle, TextMain, SectionMain } from "../../components/main/styled";
+
 
 export default function PokedexPage() {
     const context = useContext(GlobalContext)
@@ -11,17 +13,19 @@ export default function PokedexPage() {
     return (
         <>
             <Header></Header>
-            <p>PokedexPage</p>
-            <section>
-                {pokedex?.map((poke) => (
-                    <Card
-                        key={poke.name}
-                        pokeUrl={`${BASE_URL}/${poke.name}`}
-                        removeFromPokedex={removeFromPokedex}
-                        openPokeDetails={openPokeDetails}
-                    />
-                ))}
-            </section>
+            <MainStyle>
+                <TextMain>Meus Pokemons</TextMain>
+                <SectionMain>
+                    {pokedex?.map((poke) => (
+                        <Card
+                            key={poke.name}
+                            pokeUrl={`${BASE_URL}/${poke.name}`}
+                            removeFromPokedex={removeFromPokedex}
+                            openPokeDetails={openPokeDetails}
+                        />
+                    ))}
+                </SectionMain>
+            </MainStyle>
         </>
     );
 }
