@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../routes/cordinator";
-import { HeaderStyle, Logo, ButtonPokedex, ButtonHome } from "./styled";
+import { HeaderStyle, Logo, ButtonPokedex, ButtonHome, ButtonAddPokedex, ButtonRemovePokedex } from "./styled";
 import { logoPokedex } from '../../assets/images'
 import { Icon } from '@iconify/react';
 
@@ -43,12 +43,12 @@ export default function Header(props) {
                         </ButtonHome>
                         <Logo src={logoPokedex} />
                         {filteredPokedex?.length !== 0 ?
-                            <ButtonPokedex onClick={() => removeFromPokedex(pokeDetail)}>
-                                Remover pokemon
-                            </ButtonPokedex>
-                            : <ButtonPokedex onClick={() => addInPokedex(pokeDetail)}>
-                                Adicionar pokemon
-                            </ButtonPokedex>
+                            <ButtonRemovePokedex onClick={() => removeFromPokedex(pokeDetail)}>
+                                Excluir da pokedex
+                            </ButtonRemovePokedex>
+                            : <ButtonAddPokedex onClick={() => addInPokedex(pokeDetail)}>
+                                Adicionar a pokedex
+                            </ButtonAddPokedex>
                         }
                     </HeaderStyle>
                 );

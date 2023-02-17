@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HeaderStyle = styled.header`
     background-color: #FFFFFF;
-    border: 1px solid black;
     width: 100%;
     height: 16vh;
     display: flex;
@@ -28,6 +27,17 @@ export const ButtonPokedex = styled.button`
     font-weight: 700;
     padding: 4px 10px 4px 10px;
     box-shadow: 0px 4px 4px 0px #00000040;
+`
+export const ButtonAddPokedex = styled(ButtonPokedex)`
+    height: 6vh;
+    width: 13vw;
+    font-size: 0.8rem;
+    font-weight: 400;
+    box-shadow: none;
+`
+
+export const ButtonRemovePokedex = styled(ButtonAddPokedex)`
+    background-color: #FF6262;
 `
 
 export const ButtonHome = styled.button`

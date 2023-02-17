@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalContext";
 import React from "react";
 import Header from "../../components/header/Header";
+import { MainStyle, TextMain, SectionMain } from "../../components/main/styled";
 
 export default function DetailsPage() {
 
@@ -12,16 +13,20 @@ export default function DetailsPage() {
     return (
 
         <>
-            <p>DetailsPage</p>
             <Header
                 addInPokedex={addInPokedex}
                 pokeDetail={pokeDetail}
                 removeFromPokedex={removeFromPokedex}
                 pokedex={pokedex}
             ></Header>
-            <CardDetails
-                pokeDetail={pokeDetail}
-            ></CardDetails>
+            <MainStyle>
+                <TextMain>Detalhes</TextMain>
+                <SectionMain>
+                    <CardDetails
+                        pokeDetail={pokeDetail}
+                    ></CardDetails>
+                </SectionMain>
+            </MainStyle>
         </>
     );
 }
