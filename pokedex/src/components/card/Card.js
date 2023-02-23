@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { getPoke } from "../../api/getPoke";
 import { goToDetails } from "../../routes/cordinator";
 import React from "react";
-import { Container, PokemonNumber, PokemonName, PokemonType, TypesContainer, Pokeball, CatchButton, Pokemon } from './styled'
+import { Container, PokemonNumber, PokemonName, PokemonType, TypesContainer, Pokeball, CatchButton, Pokemon, DetailsButton, DeleteButton } from './styled'
 import pokeball from '../../assets/pokeball.png'
 import { getTypes } from '../../utils/ReturnPokemonType'
 import { getColors } from "../../utils/ReturnCardColor";
@@ -57,9 +57,9 @@ function Card(props) {
                                     return <PokemonType key={type.type.name} src={getTypes(type.type.name)} alt={type.type.name} />
                                 })}
                             </TypesContainer>
-                            <button onClick={() => onClickDetails(pokemon)}>
+                            <DetailsButton onClick={() => onClickDetails(pokemon)}>
                                 Detalhes
-                            </button>
+                            </DetailsButton>
                         </div>
                         <div>
                             <Pokemon src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${addZeroes(pokemon.id, 3)}.png`} alt="" />
@@ -68,9 +68,9 @@ function Card(props) {
                                     Capturar
                                 </CatchButton>
                             ) : (
-                                <CatchButton onClick={() => removeFromPokedex(pokemon)}>
+                                <DeleteButton onClick={() => removeFromPokedex(pokemon)}>
                                     Excluir
-                                </CatchButton>
+                                </DeleteButton>
                             )}
                         </div>
                         <Pokeball src={pokeball} alt="pokeball" />
@@ -82,22 +82,3 @@ function Card(props) {
 }
 
 export default Card;
-
-// {/* <div>
-//     <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
-//     <div>
-        // {location.pathname === "/" ? (
-        //     <button onClick={() => addInPokedex(pokemon)}>
-        //         Adicionar à Pokedex
-        //     </button>
-        // ) : (
-        //     <button onClick={() => removeFromPokedex(pokemon)}>
-        //         Remover da Pokedex
-        //     </button>
-        // )}
-
-//         <button onClick={() => onClickDetails(pokemon)}>
-//             Ver detalhes
-//         </button>
-//     </div>
-// </div> */}

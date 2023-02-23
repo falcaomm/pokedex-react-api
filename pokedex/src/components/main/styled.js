@@ -10,12 +10,14 @@ export const TextMain = styled.p`
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
+    margin-bottom:10vh;
 `
 export const SectionMain = styled.main`
     min-height: 62.3vh;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 6vh;
+    row-gap: 60px;
     column-gap: 2.5vh;
+    justify-content: center;
 `
