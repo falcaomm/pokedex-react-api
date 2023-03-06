@@ -23,7 +23,7 @@ export default function DetailsPage() {
                 <TextMain>Detalhes</TextMain>
                 <SectionMain>
                     <CardDetails
-                        pokeDetail={pokeDetail}
+                        pokemon={pokeDetail}
                     ></CardDetails>
                 </SectionMain>
             </MainStyle>

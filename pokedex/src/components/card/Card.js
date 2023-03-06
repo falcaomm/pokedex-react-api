@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { getPoke } from "../../api/getPoke";
 import { goToDetails } from "../../routes/cordinator";
 import React from "react";
-import { Container, PokemonNumber, PokemonName, PokemonType, TypesContainer, Pokeball, CatchButton, Pokemon, DetailsButton, DeleteButton } from './styled'
+import { Container, PokemonNumber, PokemonName, PokemonType, TypesContainer, Pokeball, CatchButton, Pokemon, DetailsButton, DeleteButton, Modal} from './styled'
 import pokeball from '../../assets/pokeball.png'
 import { getTypes } from '../../utils/ReturnPokemonType'
 import { getColors } from "../../utils/ReturnCardColor";
@@ -11,7 +11,7 @@ import { getColors } from "../../utils/ReturnCardColor";
 
 function Card(props) {
     const navigate = useNavigate()
-    const { pokeUrl, addInPokedex, removeFromPokedex, openPokeDetails, poke } = props;
+    const { pokeUrl, addInPokedex, removeFromPokedex, openPokeDetails } = props;
 
     const onClickDetails = (pokemon) => {
         openPokeDetails(pokemon)
@@ -74,7 +74,8 @@ function Card(props) {
                             )}
                         </div>
                         <Pokeball src={pokeball} alt="pokeball" />
-                    </Container>)
+                    </Container>
+                )
                 })
             }
         </>

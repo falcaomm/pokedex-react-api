@@ -18,6 +18,6 @@ export const SectionMain = styled.main`
     display: flex;
     flex-wrap: wrap;
     row-gap: 60px;
-    column-gap: 2.5vh;
+    column-gap: 20px;
     justify-content: center;
 `

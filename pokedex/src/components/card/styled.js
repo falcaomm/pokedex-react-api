@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 2rem;
+  padding: 1rem;
   min-width: 400px;
   max-width: 400px;
   background-color: ${(props) => props.color};
@@ -37,6 +37,7 @@ export const PokemonType = styled.img`
 `;
 
 export const TypesContainer = styled.div`
+    display: flex;
     margin-bottom: 38px;
 `;
 export const Pokeball = styled.img`

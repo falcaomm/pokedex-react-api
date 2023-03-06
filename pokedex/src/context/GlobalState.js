@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getPokeList } from "../api/getPokeList";
 import { BASE_URL } from "../constants/url";
 
+
 export const GlobalState = (props) => {
 
     const [pokeList, setPokeList] = useState([]);
@@ -20,7 +21,7 @@ export const GlobalState = (props) => {
             const newPokedex = [...pokedex, clickedPoke];
             setPokedex(newPokedex);
         }
-    };
+    }
 
     const removeFromPokedex = (clickedPoke) => {
         const newPokedex = pokedex.filter((poke) => poke.name !== clickedPoke.name)
