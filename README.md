@@ -5,7 +5,7 @@
 <img src="#" alt="GIF de demonstração do projeto">
 </div>
 
-> O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes, tendo como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), foi desenvolvido com React a partir de gerenciamento de estado global (context) e lógica de rotas, com design pré definido no [Figma](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design")
+> O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes, tendo como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), foi desenvolvido com React a partir de gerenciamento de estado global (context) e lógica de rotas, com design pré definido no [Figma](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design").
 
 ## 💻 Tecnologias e Recursos Utilizados : 
 * React;
