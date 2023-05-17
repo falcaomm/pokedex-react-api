@@ -1,10 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../routes/cordinator";
 import { HeaderStyle, Logo, ButtonPokedex, ButtonHome, ButtonAddPokedex, ButtonRemovePokedex } from "./styled";
-import { logoPokedex } from '../../assets/images'
+import  logoPokedex  from '../../assets/logoPokemon.png'
 import { Icon } from '@iconify/react';
 
-
+    
 export default function Header(props) {
 
     const { pokeDetail, removeFromPokedex, addInPokedex, pokedex } = props

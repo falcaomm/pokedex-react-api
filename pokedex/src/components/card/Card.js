@@ -7,6 +7,7 @@ import { Container, PokemonNumber, PokemonName, PokemonType, TypesContainer, Pok
 import pokeball from '../../assets/pokeball.png'
 import { getTypes } from '../../utils/ReturnPokemonType'
 import { getColors } from "../../utils/ReturnCardColor";
+import { addZeros } from "../../utils/addZeros";
 
 
 function Card(props) {
@@ -28,29 +29,13 @@ function Card(props) {
     const types = pokemon.types
     const filterTypes = types?.filter((objeto) => objeto.slot === 1)
 
-
-    const addZeroes = (num, lenght) => {
-        var numberWithZeroes = String(num);
-        var counter = numberWithZeroes.length;
-
-        while (counter < lenght) {
-
-            numberWithZeroes = "0" + numberWithZeroes;
-
-            counter++;
-
-        }
-
-        return numberWithZeroes;
-    }
-
     return (
         <>
             {filterTypes?.map((type) => {
                 return(
                     <Container key={type.type.name} color={getColors(type.type.name)}>
                         <div>
-                            <PokemonNumber>{`#${addZeroes(pokemon.id, 2)}`}</PokemonNumber>
+                            <PokemonNumber>{`#${addZeros(pokemon.id, 2)}`}</PokemonNumber>
                             <PokemonName>{pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</PokemonName>
                             <TypesContainer>
                                 {types?.map((type) => {
@@ -62,7 +47,7 @@ function Card(props) {
                             </DetailsButton>
                         </div>
                         <div>
-                            <Pokemon src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${addZeroes(pokemon.id, 3)}.png`} alt="" />
+                            <Pokemon src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${addZeros(pokemon.id, 3)}.png`} alt="" />
                             {location.pathname === "/" ? (
                                 <CatchButton onClick={() => addInPokedex(pokemon)}>
                                     Capturar

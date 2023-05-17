@@ -4,9 +4,6 @@ import { GlobalContext } from "../../context/GlobalContext";
 import Card from "../../components/card/Card";
 import React from "react";
 import { MainStyle, TextMain, SectionMain } from "../../components/main/styled";
-import { getPoke } from "../../api/getPoke";
-import { useState, useEffect } from "react";
-
 
 export default function HomePage() {
 
