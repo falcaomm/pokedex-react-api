@@ -49,5 +49,5 @@ npm install
 # Para iniciar a aplicação, execute o script start
 # A aplicação estará disponível na porta padrão 3000.
 npm run start
-```bash
+```
 
