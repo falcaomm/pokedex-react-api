@@ -1,11 +1,11 @@
 # Projeto Pokedex - React e API's 
 
 <div align="center">
-<p><a href="#">Clique aqui</a> para abrir no navegador<p/>
-<img src="#" alt="GIF de demonstração do projeto">
+<img src="https://github.com/falcaomm/catalogo-digital/assets/108558119/24ef1c2f-3d73-43c4-a260-edff564b82ea" alt="Imagem de demonstração do projeto" height="380">
+<b><p><a href="https://falcaomm-pokedex.surge.sh/">Clique aqui</a> para abrir no navegador<p/></b>
 </div>
 
-> O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes, tendo como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api")e design do pré definido no [Figma](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design")
+> O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes, tendo como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), foi desenvolvido com React a partir de gerenciamento de estado global (context) e lógica de rotas, com design pré definido no [Figma](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design").
 
 ## 💻 Tecnologias e Recursos Utilizados : 
 * React;
@@ -16,24 +16,38 @@
 * Integração com API;
 * JavaScript, CSS e HTML;
 * Styled-components;
-* Design Systems(Chakra UI);
-* LocalStorage.
 
-## 📝Lista de Requisitos:
+## 📝 Lista de Requisitos:
 - **Gerais:**
-	- [ ] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
-	- [ ] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
-	- [ ] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
+	- [x] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
+	- [x] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
+	- [x] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
 - **Página Home:**
-	- [ ] Mostrar uma lista de Pokemons, contendo ao menos 20 Pokemons;
-	- [ ] Cada Pokemon será representado por um Card;
-	- [ ] Em cada card de Pokemon tem um botão para adicioná-lo à Pokedex e um outro botão para acessar os detalhes do Pokemon;
-	- [ ] Header dessa página terá um botão para acessar a página da Pokedex
+	- [x] Mostrar uma lista de Pokemons, contendo ao menos 20 Pokemons;
+	- [x] Cada Pokemon será representado por um Card;
+	- [x] Em cada card de Pokemon tem um botão para adicioná-lo à Pokedex e um outro botão para acessar os detalhes do Pokemon;
+	- [x] Header dessa página terá um botão para acessar a página da Pokedex
 - **Página Pokédex**
-	- [ ] Renderizar a lista de pokémons adicionados na pokedex;
-	- [ ] Em cada card de Pokemon deve ter um botão para removê-lo da Pokedex e um outro botão para acessar os detalhes do Pokemon.
-	- [ ] Header deve ter um botão para voltar para a Home
-	- [ ] Não deve ser possível adicionar o mesmo Pokemon duas vezes na Pokedex
+	- [x] Renderizar a lista de pokémons adicionados na pokedex;
+	- [x] Em cada card de Pokemon deve ter um botão para removê-lo da Pokedex e um outro botão para acessar os detalhes do Pokemon.
+	- [x] Header deve ter um botão para voltar para a Home
+	- [x] Não deve ser possível adicionar o mesmo Pokemon duas vezes na Pokedex
 - **Página de Detalhes**
-	- [ ] Mostrar os detalhes do Pokemon selecionado, com informações descritas
-	- [ ] Header deve ter um botão para adicionar ou remover da Pokedex e outro para voltar a página home.
+	- [x] Mostrar os detalhes do Pokemon selecionado, com informações descritas
+	- [x] Header deve ter um botão para adicionar ou remover da Pokedex e outro para voltar a página home.
+
+## 🧪 Testando Localmente:
+
+```bash
+# Com o Node.js instalado clone o repositório do projeto
+git clone [URL do repositório]
+
+# Navegue até a pasta do projeto e instale as dependências e 
+cd [nome da pasta do projeto]
+npm install
+
+# Para iniciar a aplicação, execute o script start
+# A aplicação estará disponível na porta padrão 3000.
+npm run start
+```
+
